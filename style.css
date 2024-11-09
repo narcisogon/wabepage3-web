@@ -1,0 +1,517 @@
+/* style.css */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header Styles */
+header {
+    background: #00aaff;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8em;
+}
+
+.logo h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav {
+    float: right;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 8px 12px;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+    color: #ff6600;
+    border-bottom: 2px solid #ff6600;
+}
+
+/* Dropdown Menu */
+.dropdown .dropbtn::after {
+    content: "\f0d7"; /* Font Awesome Down Arrow */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00aaff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #008ecc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://raw.githubusercontent.com/narcisogon/slides-page/main/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px; /* To offset fixed header */
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn {
+    padding: 15px 30px;
+    background: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    background: #e65c00;
+}
+
+/* Featured Attractions */
+.featured-attractions {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.featured-attractions h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #00aaff;
+}
+
+.attraction-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    background: #f4f4f4;
+    border-radius: 10px;
+    width: 30%;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin-bottom: 15px;
+    color: #00aaff;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-content .btn {
+    background: #00aaff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.card-content .btn:hover {
+    background: #008ecc;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #00aaff;
+}
+
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.testimonial {
+    opacity: 0;
+    transition: opacity 1s ease;
+    flex: 0 0 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.testimonial.active {
+    opacity: 1;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.testimonial h4 {
+    font-weight: bold;
+    color: #00aaff;
+}
+
+/* Navigation Buttons */
+.testimonial-nav {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #00aaff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.testimonial-nav:hover {
+    background: #00aaff;
+    color: #fff;
+}
+
+.testimonial-nav.prev {
+    left: -50px;
+}
+
+.testimonial-nav.next {
+    right: -50px;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social-media img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover img {
+    transform: scale(1.2);
+}
+
+/* FAQs Section */
+.faqs-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.faqs-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #00aaff;
+}
+
+.faq-accordion .faq-item {
+    margin-bottom: 20px;
+}
+
+.accordion {
+    background-color: #00aaff;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.accordion:hover {
+    background-color: #008ecc;
+}
+
+.accordion::after {
+    content: '\f0da'; /* Font Awesome Chevron Down */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.accordion.active::after {
+    transform: rotate(180deg);
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #f1f1f1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 5px 5px;
+}
+
+.panel p {
+    padding: 15px 0;
+    color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .attraction-cards,
+    .pricing-table,
+    .benefits-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .pricing-card,
+    .benefit {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #00aaff;
+        display: none;
+        flex-direction: column;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .attraction-details {
+        flex-direction: column;
+    }
+
+    .attraction-details img {
+        margin-bottom: 20px;
+    }
+
+    .faq-accordion .accordion::after {
+        right: 20px;
+    }
+
+    .attraction-cards .card,
+    .pricing-table .pricing-card,
+    .benefits-list .benefit {
+        width: 100%;
+    }
+
+    /* Adjust Hero Margin */
+    .hero {
+        margin-top: 60px; /* Adjusted to match the actual header height */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .pricing-card {
+        width: 100%;
+    }
+
+    .benefit {
+        width: 100%;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::after {
+        left: 60px;
+    }
+}
